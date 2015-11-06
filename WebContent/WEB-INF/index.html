@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<title>EHealthCheck</title>
+<style>
+
+@import url(index.css);
+
+
+</style>
+<script src="js/d3.v2.min.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script>
+	var ehealthurl = 'http://localhost:8080/EHealthCheck/';
+
+</script>
+
+<header>
+</header>
+
+<section>
+<div id="selection">
+<section class="KNR">
+	<h1>Krankheiten in den letzten 12 Monaten</h1>
+    <div>
+        <select id="leftValuesKNR" size="20" multiple></select>
+		<select id="leftValuesKNRhidden" hidden=True></select>
+		<br>Suche: <input type="text" id="searchKNR" /><input type="button" id="clearSearchKNR" value=".L." />
+	</div>
+    <div>
+        <input type="button" id="btnLeftKNR" value="&lt;&lt;" />
+        <input type="button" id="btnRightKNR" value="&gt;&gt;" />
+    </div>
+    <div>
+        <select id="rightValuesKNR" size="20" multiple>
+        </select>
+		<input type="button" id="clearRightKNR" value="Zurücksetzen" />
+        <!--<div>
+            <input type="text" id="txtRight" />
+        </div>-->
+    </div>
+</section>
+<section class="KNR_KH">
+	<h1>Im Krankenhaus wegen ... in den letzten 12 Monaten</h1>
+    <div>
+        <select id="leftValuesKNR_KH" size="20" multiple></select>
+		<select id="leftValuesKNR_KHhidden" hidden=True></select>
+		<br>Suche: <input type="text" id="searchKNR_KH" /><input type="button" id="clearSearchKNR_KH" value=".L." />
+    </div>
+    <div>
+        <input type="button" id="btnLeftKNR_KH" value="&lt;&lt;" />
+        <input type="button" id="btnRightKNR_KH" value="&gt;&gt;" />
+    </div>
+    <div>
+        <select id="rightValuesKNR_KH" size="20" multiple>
+        </select>
+		<input type="button" id="clearRightKNR_KH" value="Zurücksetzen" />
+        <!--<div>
+            <input type="text" id="txtRight" />
+        </div>-->
+    </div>
+</section>
+<section class="ATC">
+	<h1>Wirkstoffgaben (ATC) in den letzten 12 Monaten</h1>
+    <div>
+        <select id="leftValuesATC" size="20" multiple></select>
+		<select id="leftValuesATChidden" hidden=True></select>
+		<br>Suche: <input type="text" id="searchATC" /><input type="button" id="clearSearchATC" value=".L." />
+    </div>
+    <div>
+        <input type="button" id="btnLeftATC" value="&lt;&lt;" />
+        <input type="button" id="btnRightATC" value="&gt;&gt;" />
+    </div>
+    <div>
+        <select id="rightValuesATC" size="20" multiple>
+        </select>
+		<input type="button" id="clearRightATC" value="Zurücksetzen" />
+        <!--<div>
+            <input type="text" id="txtRight" />
+        </div>-->
+    </div>
+</section>
+</div>
+<div id="results">
+<svg class="chart"></svg>
+</div>
+</section>
+
+<script>
+<!-- INIT -->
+var KNRlist = [],
+	KNR_KHlist = [],
+	ATClist = [];
+load("KNR","#leftValuesKNR");
+load("KNR_KH","#leftValuesKNR_KH");
+load("ATC","#leftValuesATC");
+
+<!-- LOADER -->
+function load(loader,form) {
+	var myurl=ehealthurl+'Knr';
+	var myvar='KNRlist';
+	var intsort=true;
+
+	if (loader=="KNR_KH") {
+		var myurl=ehealthurl+'Knr';
+		var myvar='KNR_KHlist';
+		var intsort=true;
+	}
+	if (loader=="ATC") {
+		var myurl=ehealthurl+'ATC';
+		var myvar='ATClist';
+		var intsort=false;
+	}
+	
+	$(form).find('option').remove();
+	if (window[myvar].length == 0) getfromurl(myurl,myvar,form,intsort);
+	else {
+		for (i = 0; i < window[myvar].length; i++) {
+			$(form).append('<option value=' + window[myvar][i].key + '>' + window[myvar][i].value + '</option>');
+		}
+	}
+}
+
+function getfromurl(url,variable,form,intsort=true) {
+	$.getJSON( url, function( jsondata ) {
+		data = $.map(jsondata,function(value,key) { return {key,value};} );
+		data = data.sort(function (a, b) {
+			if (intsort) {
+				var c =  parseInt(a.key),
+					d = parseInt(b.key);
+			} else {
+				var c =  a.key,
+					d = b.key;
+			}
+			return c > d ? 1 :
+				   d < c ? -1 :
+				   0;       
+		});
+		for (i = 0; i < data.length; i++) {
+			$(form).append('<option value=' + data[i].key + '>' + data[i].value + '</option>');
+		}
+		window[variable]=data;
+	});
+}
+
+<!-- ACTIONS -->
+
+
+$("#btnLeftKNR").click(function () {
+	move("#rightValuesKNR","#leftValuesKNR");
+    //var selectedItem = $("#rightValuesKNR option:selected");
+    //$("#leftValuesKNR").append(selectedItem);
+});
+
+$("#btnRightKNR").click(function () {
+	move("#leftValuesKNR","#rightValuesKNR");
+    //var selectedItem = $("#leftValuesKNR option:selected");
+    //$("#rightValuesKNR").append(selectedItem);
+});
+
+$("#leftValuesKNR").change(function () {
+	move("#leftValuesKNR","#rightValuesKNR");
+});
+
+$("#rightValuesKNR").change(function () {
+	move("#rightValuesKNR","#leftValuesKNR");
+});
+
+$("#clearRightKNR").click(function () {
+	clear('#rightValuesKNR','KNR','#leftValuesKNR')
+});
+
+
+$("#searchKNR").on('keyup', function() {
+	search("#leftValuesKNR",$(this).val());
+});
+
+$("#clearSearchKNR").click(function () {
+	$("#searchKNR").val('');
+	clearsearch("#leftValuesKNR");
+});
+
+
+
+$("#btnLeftKNR_KH").click(function () {
+	move("#rightValuesKNR_KH","#leftValuesKNR_KH");
+    //var selectedItem = $("#rightValuesKNR_KH option:selected");
+    //$("#leftValuesKNR_KH").append(selectedItem);
+});
+
+$("#btnRightKNR_KH").click(function () {
+	move("#leftValuesKNR_KH","#rightValuesKNR_KH");
+    //var selectedItem = $("#leftValuesKNR_KH option:selected");
+    //$("#rightValuesKNR_KH").append(selectedItem);
+});
+
+$("#leftValuesKNR_KH").change(function () {
+	move("#leftValuesKNR_KH","#rightValuesKNR_KH");
+});
+
+$("#rightValuesKNR_KH").change(function () {
+	move("#rightValuesKNR_KH","#leftValuesKNR_KH");
+});
+
+$("#clearRightKNR_KH").click(function () {
+	clear('#rightValuesKNR_KH','KNR_KH','#leftValuesKNR_KH')
+});
+
+
+$("#searchKNR_KH").on('keyup', function() {
+	search("#leftValuesKNR_KH",$(this).val());
+});
+
+$("#clearSearchKNR_KH").click(function () {
+	$("#searchKNR_KH").val('');
+	clearsearch("#leftValuesKNR_KH");
+});
+
+
+
+$("#btnLeftATC").click(function () {
+	move("#rightValuesATC","#leftValuesATC",false);
+    //var selectedItem = $("#rightValuesATC option:selected");
+    //$("#leftValuesATC").append(selectedItem);
+});
+
+$("#btnRightATC").click(function () {
+	move("#leftValuesATC","#rightValuesATC",false);
+    //var selectedItem = $("#leftValuesATC option:selected");
+    //$("#rightValuesATC").append(selectedItem);
+});
+
+$("#leftValuesATC").change(function () {
+	move("#leftValuesATC","#rightValuesATC",false);
+});
+
+$("#rightValuesATC").change(function () {
+	move("#rightValuesATC","#leftValuesATC",false);
+});
+
+$("#clearRightATC").click(function () {
+	clear('#rightValuesATC','ATC','#leftValuesATC')
+});
+
+
+$("#searchATC").on('keyup', function() {
+	search("#leftValuesATC",$(this).val(),false);
+});
+
+$("#clearSearchATC").click(function () {
+	$("#searchATC").val('');
+	clearsearch("#leftValuesATC",false);
+});
+
+<!-- Helper Functions -->
+function move(from,to,intsort=true) {
+	var selectedItem = $(from+" option:selected");
+    <!--$("#rightValues").append(selectedItem);-->
+    <!-- $("#txtRight").val(selectedItem.text());-->
+    var targetList =$(to+" option");
+	$(selectedItem).each(function(){
+		var added = false;
+		var item = $(this);
+		$(item).fadeOut("fast", function() {
+			if (intsort) {
+				var selectint = parseInt($(item).val());
+				$(targetList).each(function(){
+					if (parseInt($(this).val()) > selectint) {
+						$(item).insertBefore($(this)).fadeIn("fast");
+						added = true;
+						return false;
+					}
+				});
+			} else {
+						var selectint = $(item).val();
+						$(targetList).each(function(){
+										if ($(this).val() > selectint) {
+											$(item).insertBefore($(this)).fadeIn("fast");
+											added = true;
+											return false;
+										}
+						});
+					}
+			if(!added) {
+				$(item).appendTo($(to)).fadeIn("fast");
+			}
+		});
+	});
+}
+
+function clear(form,loader,newform) {
+	var $select = $(form); 
+	$select.find('option').remove();
+	load(loader,newform);
+}
+
+
+function search(searchform,term,intsort=true) {
+	var hiddenform = searchform+"hidden";
+	var sterm = term.toLowerCase();
+	var targetList =$(searchform+" option");
+	//1st: hide all irrelevant
+	$(targetList).each(function(){
+				if ($(this).text().toLowerCase().indexOf(sterm) >=0) {
+					$(this).prop('selected', true);
+				} else {
+					$(this).prop('selected', false);
+					$(this).appendTo($(hiddenform));
+				}
+	});
+	var hiddenList =$(hiddenform+" option");
+	$(hiddenList).each(function(){
+				if ($(this).text().toLowerCase().indexOf(sterm) >=0) {
+					var added = false;
+					var item = $(this);
+					if (intsort) {
+						var selectint = parseInt($(item).val());
+						$(targetList).each(function(){
+							if (parseInt($(this).val()) > selectint) {
+								$(item).insertBefore($(this));
+								added = true;
+								return false;
+							}
+						});
+					} else {
+						var selectint = $(item).val();
+						$(targetList).each(function(){
+										if ($(this).val() > selectint) {
+											$(item).insertBefore($(this));
+											added = true;
+											return false;
+										}
+						});
+					}
+					if(!added) {
+						$(item).appendTo($(searchform));
+					}
+					//$(this).appendTo($(searchform));
+					$(this).prop('selected', true);
+					//move(hiddenform,searchform);
+				}
+	});
+}
+
+function clearsearch(searchform,intsort=true) {
+	var hiddenform = searchform+"hidden";
+	var targetList =$(searchform+" option");
+	var hiddenList =$(hiddenform+" option");
+	$(hiddenList).each(function(){
+			var added = false;
+			var item = $(this);
+			if (intsort) {
+				var selectint = parseInt($(item).val());
+				$(targetList).each(function(){
+								if (parseInt($(this).val()) > selectint) {
+									$(item).insertBefore($(this));
+									added = true;
+									return false;
+								}
+				});
+			} else {
+				var selectint = $(item).val();
+				$(targetList).each(function(){
+								if ($(this).val() > selectint) {
+									$(item).insertBefore($(this));
+									added = true;
+									return false;
+								}
+				});
+			}
+			if(!added) {
+				$(item).appendTo($(searchform));
+			}
+	});
+}
+
+</script>
+
+
+
+
+<script>
+
+/*
+d3.json(
+  'http://localhost:8080/EHealthCheck/EHealthCheck',
+  function (error,jsondata) {
+	if (error) return console.warn(error);
+    console.log(jsondata);
+
+    //var data = jsondata.map(function(d) { return d.Value; });
+    //console.log(data);
+
+  });*/
+  
+var data = {
+  labels: [
+    'resilience', 'maintainability', 'accessibility',
+    'uptime', 'functionality', 'impact'
+  ],
+  series: [
+    {
+      label: '2012',
+      values: [4, 8, 15, 16, 23, 42]
+    },
+    {
+      label: '2013',
+      values: [12, 43, 22, 11, 73, 25]
+    },
+    {
+      label: '2014',
+      values: [31, 28, 14, 8, 15, 21]
+    },]
+};
+
+var chartWidth       = 300,
+    barHeight        = 20,
+    groupHeight      = barHeight * data.series.length,
+    gapBetweenGroups = 10,
+    spaceForLabels   = 150,
+    spaceForLegend   = 150;
+
+// Zip the series data together (first values, second values, etc.)
+var zippedData = [];
+for (var i=0; i<data.labels.length; i++) {
+  for (var j=0; j<data.series.length; j++) {
+    zippedData.push(data.series[j].values[i]);
+  }
+}
+
+// Color scale
+var color = d3.scale.category20();
+var chartHeight = barHeight * zippedData.length + gapBetweenGroups * data.labels.length;
+
+var x = d3.scale.linear()
+    .domain([0, d3.max(zippedData)])
+    .range([0, chartWidth]);
+
+var y = d3.scale.linear()
+    .range([chartHeight + gapBetweenGroups, 0]);
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .tickFormat('')
+    .tickSize(0)
+    .orient("left");
+
+// Specify the chart area and dimensions
+var chart = d3.select(".chart")
+    .attr("width", spaceForLabels + chartWidth + spaceForLegend)
+    .attr("height", chartHeight);
+
+// Create bars
+var bar = chart.selectAll("g")
+    .data(zippedData)
+    .enter().append("g")
+    .attr("transform", function(d, i) {
+      return "translate(" + spaceForLabels + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/data.series.length))) + ")";
+    });
+
+// Create rectangles of the correct width
+bar.append("rect")
+    .attr("fill", function(d,i) { return color(i % data.series.length); })
+    .attr("class", "bar")
+    .attr("width", x)
+    .attr("height", barHeight - 1);
+
+// Add text label in bar
+bar.append("text")
+    .attr("x", function(d) { return x(d) - 3; })
+    .attr("y", barHeight / 2)
+    .attr("fill", "red")
+    .attr("dy", ".35em")
+    .text(function(d) { return d; });
+
+// Draw labels
+bar.append("text")
+    .attr("class", "label")
+    .attr("x", function(d) { return - 10; })
+    .attr("y", groupHeight / 2)
+    .attr("dy", ".35em")
+    .text(function(d,i) {
+      if (i % data.series.length === 0)
+        return data.labels[Math.floor(i/data.series.length)];
+      else
+        return ""});
+
+chart.append("g")
+      .attr("class", "y axis")
+      .attr("transform", "translate(" + spaceForLabels + ", " + -gapBetweenGroups/2 + ")")
+      .call(yAxis);
+
+// Draw legend
+var legendRectSize = 18,
+    legendSpacing  = 4;
+
+var legend = chart.selectAll('.legend')
+    .data(data.series)
+    .enter()
+    .append('g')
+    .attr('transform', function (d, i) {
+        var height = legendRectSize + legendSpacing;
+        var offset = -gapBetweenGroups/2;
+        var horz = spaceForLabels + chartWidth + 40 - legendRectSize;
+        var vert = i * height - offset;
+        return 'translate(' + horz + ',' + vert + ')';
+    });
+
+legend.append('rect')
+    .attr('width', legendRectSize)
+    .attr('height', legendRectSize)
+    .style('fill', function (d, i) { return color(i); })
+    .style('stroke', function (d, i) { return color(i); });
+
+legend.append('text')
+    .attr('class', 'legend')
+    .attr('x', legendRectSize + legendSpacing)
+    .attr('y', legendRectSize - legendSpacing)
+    .text(function (d) { return d.label; });
+
+</script>
+

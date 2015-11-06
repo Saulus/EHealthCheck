@@ -1,0 +1,79 @@
+#selection { position: relative;   
+       height: auto; width: 700px;    
+        }   
+
+#results { position: relative;  }   
+
+#leftValuesKNR {width: 300px; size: 30}
+#leftValuesKNR_KH {width: 300px}
+#leftValuesATC {width: 300px}
+#rightValuesKNR {width: 300px}
+#rightValuesKNR_KH {width: 300px}
+#rightValuesATC {width: 300px}
+#searchKNR{width: 200px}
+#searchKNR_KH{width: 200px}
+#searchATC{width: 200px}
+
+
+SELECT, INPUT[type="text"] {
+    width: 160px;
+    box-sizing: border-box;
+}
+SECTION {
+    padding: 8px;
+    background-color: #f0f0f0;
+    overflow: auto;
+}
+SECTION > DIV {
+    float: left;
+    padding: 4px;
+}
+SECTION > DIV + DIV {
+    width: 40px;
+    text-align: center;
+}
+
+/*
+.chart rect {
+  fill: steelblue;
+}
+*/
+.chart {
+height: auto; width: 400px;}
+.chart .legend {
+  fill: black;
+  font: 14px sans-serif;
+  text-anchor: start;
+  font-size: 12px;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart .label {
+  fill: black;
+  font: 14px sans-serif;
+  text-anchor: end;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+line {
+  stroke: #fff;
+}
+
+text.active {
+  fill: red;
+}
