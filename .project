@@ -33,11 +33,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>JSON-java-master</name>
-			<type>2</type>
-			<location>C:/Users/hellwigp/Documents/4 Technology/00 Development/libs/JSON-java-master</location>
-		</link>
-	</linkedResources>
 </projectDescription>

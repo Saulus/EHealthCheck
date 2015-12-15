@@ -1,8 +1,12 @@
 package servlets;
 
 import configuration.*;
+
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -12,7 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONObject;
+import com.google.gson.Gson;
 
 import au.com.bytecode.opencsv.CSVReader;
 
@@ -26,8 +30,9 @@ import au.com.bytecode.opencsv.CSVReader;
 public class ATC extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
+	public static String myfile = Init.getWebInfPath() + "/"+Consts.atccsv;
 	private LinkedHashMap<String,String> mylist;
-	JSONObject myjson;
+	private String myjson = "{}";
 	private boolean hasError = false;
        
     /**
@@ -36,12 +41,10 @@ public class ATC extends HttpServlet {
     public ATC() {
         super();
         
-        String myfile = Consts.atccsv;
-        
         try {
-        	myfile = Init.getWebInfPath() + "/"+myfile;
-        	this.mylist=readInKnr(myfile);
-        	this.myjson = new JSONObject(mylist);
+        	this.mylist=readInList(myfile, true, false);
+        	Gson gson = new Gson(); 
+        	this.myjson = gson.toJson(mylist);
         } catch (Exception e) {
         	System.err.println("Fehler gefunden beim Einlesen der Konfiguration aus Datei " + myfile);
 			e.printStackTrace();
@@ -59,7 +62,7 @@ public class ATC extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		
 		if (hasError) response.sendError(520, "Init-Fehler");
-		else response.getWriter().append(myjson.toString());
+		else response.getWriter().append(myjson);
 	}
 
 	/**
@@ -70,9 +73,10 @@ public class ATC extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private LinkedHashMap<String,String> readInKnr(String file) throws Exception {
+	public static LinkedHashMap<String,String> readInList(String file, boolean addKeyPrefix, boolean addKeySuffix) throws Exception {
 		LinkedHashMap<String,String> mylist = new LinkedHashMap<String,String>();
-		CSVReader reader = new CSVReader(new FileReader(file), ';', '"');
+		Charset inputCharset = Charset.forName("ISO-8859-1");
+		CSVReader reader = new CSVReader(new InputStreamReader(new FileInputStream(file), inputCharset), ';', '"');
 		List<String[]> readIn = reader.readAll();
 		reader.close();
 		//first line = header-line
@@ -81,15 +85,21 @@ public class ATC extends HttpServlet {
 		Integer keycol=null;
 		Integer valuecol=null;
 		for (int j=0; j<headerline.length; j++) {
-			if (headerline[j].trim().toLowerCase().equals(Consts.atcKeyCol)) keycol=j;
-			if (headerline[j].trim().toLowerCase().equals(Consts.atcValueCol)) valuecol=j;
+			if (headerline[j].trim().toUpperCase().equals(Consts.atcKeyCol)) keycol=j;
+			if (headerline[j].trim().toUpperCase().equals(Consts.atcValueCol)) valuecol=j;
 		}
 		readIn.remove(0);
 		if (keycol == null || valuecol==null  || readIn.size()==0 )
 			throw new Exception("Configuration File does not contain columns needed or is empty");
+		String key;
+		String val;
 		for (String[] nextline : readIn) {
 			if (!nextline[keycol].isEmpty()) {
-				mylist.put(nextline[keycol], nextline[valuecol]);
+				key= nextline[keycol].toUpperCase();
+				val = nextline[valuecol];
+				if (addKeyPrefix) val = key + " " + val;
+				if (addKeySuffix) val = val + " ("+key+")";
+				mylist.put(key, val);
 			}
 		}
 		return mylist;

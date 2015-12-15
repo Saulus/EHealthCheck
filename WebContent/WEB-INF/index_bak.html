@@ -12,7 +12,6 @@
 <script src="js/jquery-2.1.4.min.js"></script>
 <script>
 	var ehealthurl = 'http://localhost:8080/EHealthCheck/';
-	//var ehealthurl = window.location.protocol + "//" + window.location.host +  window.location.pathname;
 </script>
 
 
@@ -21,17 +20,16 @@
 
 <input type="button" value=" Go " id="GObutton" alt="Start Analysis" />
 <div id="GOchange"><input type="checkbox" id="GOonchange" value=1 checked> GO on change</div>
-<img id="theImg" src="page-loader.gif" visibility="hidden" />
 <section id="global">
 <div id="selection">
 <h1>Die Patientenakte</h1>
 <section id="Stamm">
 	<h1>Stammdaten</h1>
 	<div align=right>Alter:<br>Geschlecht:</div>
-	<div><input type="text" id="alter" value="65" size="9" /><br>
+	<div><input type="text" id="alter" value="37" size="9" /><br>
 		 <select id="geschlecht">
 			<option value=1>Weiblich</option>
-			<option value=2 selected>Männlich</option>
+			<option value=2>Männlich</option>
 		</select>
 	</div>
 </section>
@@ -99,8 +97,11 @@
 </div>
 </div>
 <div id="results">
-<h1>Risikoprognosen <svg width=10 height=10 class="legend"></svg></h1>
-<small>für die folgenden 12 Monate</small><p>
+<h1>Risiken im nächsten Jahr</h1>
+<small>Relativ zur Prävalenz, für amb. Diagnose und Krankenhauseinweisung</small>
+<section id="restitle">
+<!--<h1>Relative Risiken im nächsten Jahr</h1>-->
+</section>
 <div id="chart">
 <svg class="chart"></svg>
 </div>
@@ -115,8 +116,6 @@ var KNRlist = [],
 load("KNR","#leftValuesKNR");
 load("KNR_KH","#leftValuesKNR_KH");
 load("ATC","#leftValuesATC");
-
-writelegend ();
 
 <!-- LOADER -->
 function load(loader,form) {
@@ -144,9 +143,9 @@ function load(loader,form) {
 	}
 }
 
-function getfromurl(url,variable,form,intsort) {
+function getfromurl(url,variable,form,intsort=true) {
 	$.getJSON( url, function( jsondata ) {
-		var data = $.map(jsondata,function(value,key) { return {"key":key,"value":value};} );
+		var data = $.map(jsondata,function(value,key) { return {key,value};} );
 		data = data.sort(function (a, b) {
 			if (intsort) {
 				var c =  parseInt(a.key),
@@ -159,7 +158,6 @@ function getfromurl(url,variable,form,intsort) {
 				   d < c ? -1 :
 				   0;       
 		});
-		//console.log(data);
 		for (i = 0; i < data.length; i++) {
 			$(form).append('<option value=' + data[i].key + ' title="' + data[i].value + '">' + data[i].value + '</option>');
 		}
@@ -171,23 +169,23 @@ function getfromurl(url,variable,form,intsort) {
 
 
 $("#btnLeftKNR").click(function () {
-	move("#rightValuesKNR","#leftValuesKNR",true);
+	move("#rightValuesKNR","#leftValuesKNR");
     //var selectedItem = $("#rightValuesKNR option:selected");
     //$("#leftValuesKNR").append(selectedItem);
 });
 
 $("#btnRightKNR").click(function () {
-	move("#leftValuesKNR","#rightValuesKNR",true);
+	move("#leftValuesKNR","#rightValuesKNR");
     //var selectedItem = $("#leftValuesKNR option:selected");
     //$("#rightValuesKNR").append(selectedItem);
 });
 
 $("#leftValuesKNR").change(function () {
-	move("#leftValuesKNR","#rightValuesKNR",true);
+	move("#leftValuesKNR","#rightValuesKNR");
 });
 
 $("#rightValuesKNR").change(function () {
-	move("#rightValuesKNR","#leftValuesKNR",true);
+	move("#rightValuesKNR","#leftValuesKNR");
 });
 
 $("#clearRightKNR").click(function () {
@@ -196,34 +194,34 @@ $("#clearRightKNR").click(function () {
 
 
 $("#searchKNR").on('keyup', function() {
-	search("#leftValuesKNR",$(this).val(),true);
+	search("#leftValuesKNR",$(this).val());
 });
 
 $("#clearSearchKNR").click(function () {
 	$("#searchKNR").val('');
-	clearsearch("#leftValuesKNR",true);
+	clearsearch("#leftValuesKNR");
 });
 
 
 
 $("#btnLeftKNR_KH").click(function () {
-	move("#rightValuesKNR_KH","#leftValuesKNR_KH",true);
+	move("#rightValuesKNR_KH","#leftValuesKNR_KH");
     //var selectedItem = $("#rightValuesKNR_KH option:selected");
     //$("#leftValuesKNR_KH").append(selectedItem);
 });
 
 $("#btnRightKNR_KH").click(function () {
-	move("#leftValuesKNR_KH","#rightValuesKNR_KH",true);
+	move("#leftValuesKNR_KH","#rightValuesKNR_KH");
     //var selectedItem = $("#leftValuesKNR_KH option:selected");
     //$("#rightValuesKNR_KH").append(selectedItem);
 });
 
 $("#leftValuesKNR_KH").change(function () {
-	move("#leftValuesKNR_KH","#rightValuesKNR_KH",true);
+	move("#leftValuesKNR_KH","#rightValuesKNR_KH");
 });
 
 $("#rightValuesKNR_KH").change(function () {
-	move("#rightValuesKNR_KH","#leftValuesKNR_KH",true);
+	move("#rightValuesKNR_KH","#leftValuesKNR_KH");
 });
 
 $("#clearRightKNR_KH").click(function () {
@@ -232,12 +230,12 @@ $("#clearRightKNR_KH").click(function () {
 
 
 $("#searchKNR_KH").on('keyup', function() {
-	search("#leftValuesKNR_KH",$(this).val(),true);
+	search("#leftValuesKNR_KH",$(this).val());
 });
 
 $("#clearSearchKNR_KH").click(function () {
 	$("#searchKNR_KH").val('');
-	clearsearch("#leftValuesKNR_KH",true);
+	clearsearch("#leftValuesKNR_KH");
 });
 
 
@@ -313,7 +311,7 @@ function GO() {
 }
 
 <!-- Helper Functions -->
-function move(from,to,intsort) {
+function move(from,to,intsort=true) {
 	var selectedItem = $(from+" option:selected");
     <!--$("#rightValues").append(selectedItem);-->
     <!-- $("#txtRight").val(selectedItem.text());-->
@@ -361,7 +359,7 @@ function clear(form,loader,newform) {
 }
 
 
-function search(searchform,term,intsort) {
+function search(searchform,term,intsort=true) {
 	var hiddenform = searchform+"hidden";
 	var sterm = term.toLowerCase();
 	var targetList =$(searchform+" option");
@@ -408,7 +406,7 @@ function search(searchform,term,intsort) {
 	});
 }
 
-function clearsearch(searchform,intsort) {
+function clearsearch(searchform,intsort=true) {
 	var hiddenform = searchform+"hidden";
 	var targetList =$(searchform+" option");
 	var hiddenList =$(hiddenform+" option");
@@ -443,164 +441,175 @@ function clearsearch(searchform,intsort) {
 <!-- Grafik functions -->
 
 function refreshGraph(parameters) {
-	d3.select('#theImg').style("visibility","visible");
-	d3.json(ehealthurl+'EHealthCheck').post(parameters,
+	d3.select(".chart").selectAll("*").remove();
+	$('#theImg').remove();
+	$('#chart').prepend('<img id="theImg" src="page-loader.gif" width=150px height=150px />');
+	d3.json('http://localhost:8080/EHealthCheck/EHealthCheck').post(parameters,
 	  function (error,jsondata) {
 		if (error) return console.warn(error);
 		
-		//Sort: create array of sorted keys
-		var sortedkeys = Object.keys(jsondata);
-		sortedkeys.sort(function(a,b){ 
-			if (jsondata[b].risk[1]>0.01 || jsondata[a].risk[1]>0.01)
-				return jsondata[b].risk[1]-jsondata[a].risk[1];
-			return jsondata[b].risk[0]-jsondata[a].risk[0];
-		});
-	
-		//console.log(sortedkeys);
-		//console.log(jsondata['HIV / AIDS (14)']);
-	
-		var length_per_model = 2;
+		//var data = jsondata.map(function(d) { return d.Value; });
+		//data);
+		var data = $.map(jsondata,function(value,key) { return {key,value};} );
+		//sort
+		data.sort(function(a, b) { return b.value.rrisk[0] - a.value.rrisk[0]; })
+		
+		//console.log(data.length);
+		console.log(data["14 HIV / AIDS"]);
+		console.log(data);
+		
+		var length_per_model = data[0].value.risk.length;
 
-		var chartWidth       = 150,
+		var chartWidth       = 200,
 			barHeight        = 10,
 			groupHeight      = barHeight * length_per_model,
 			gapBetweenGroups = 8,
-			spaceForLabels   = 450,
-			//barmiddle = spaceForLabels+(chartWidth/2);
-			barmiddle = spaceForLabels;
+			spaceForLabels   = 400,
+			barmiddle = spaceForLabels+(chartWidth/2);
+
+		// Zip the series data together (first values, second values, etc.)
+		var zippedData = [];
+		
+		//for (var i=0; i<data.length; i++) {
+		//	zippedData.push([data[i].value.risk[0],data[i].value.risk[1]]);
+		//}
+		for (var i=0; i<data.length; i++) {
+			for (var j=0; j<data[i].value.risk.length; j++) {
+				zippedData.push(data[i].value.rrisk[j]);
+			}
+		}
+		//console.log(zippedData);
 
 		// Color scale
-		var colorgreen = ["#009900","#00CC00"];
-		var colorred = ["#b30000","red"];
-		//var color = d3.scale.category20();
-		var chartHeight = barHeight * sortedkeys.length * length_per_model + gapBetweenGroups * sortedkeys.length + 20;
+		var color = d3.scale.category20();
+		var chartHeight = barHeight * data.length * length_per_model + gapBetweenGroups * data.length + 20;
 		//console.log(chartHeight);
 		
+
 		var xpos = d3.scale.linear()
-			.domain([0, 1]) //d3.max(zippedData)
-			.range([0, chartWidth]);
+			.domain([0, 4]) //d3.max(zippedData)
+			.range([0, chartWidth/2]);
 		
 		var xneg = d3.scale.linear()
 			.domain([0, 1]) //d3.max(zippedData)
 			.range([0, chartWidth/2]);
 
 		var y = d3.scale.linear()
-			.domain([0,sortedkeys.length])
-			.range([0,chartHeight]);
+			.range([chartHeight + gapBetweenGroups, 0]);
 
 		var yAxis = d3.svg.axis()
 			.scale(y)
 			.tickFormat('')
 			.tickSize(0)
 			.orient("left");
-			
+
 		// Specify the chart area and dimensions
 		var chart = d3.select(".chart")
-				.attr("width", spaceForLabels + chartWidth)
-				.attr("height", chartHeight);
-		
-		function row(row) {
-				d3.select(this).selectAll(".bargroup").remove();
-				var bar = d3.select(this).selectAll(".bar")
-					.data(jsondata[row].risk)
-					.enter().append("g")
-					.attr("class", "bargroup")
-					.attr("transform", function(d, i) {
-						return "translate(" + barmiddle + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/length_per_model))) + ")";
-					})
-				;
-				bar.append("rect")
-					.attr("fill", function(d,i) { if (d<0) return colorgreen[i]; else return colorred[i];})
-					.attr("class", "bar")
-					.attr("x", function(d) { if (d<0) return -xneg(-d); else  return 0; })
-					.attr("width", function(d) { 
-						if (d<0) return xneg(-d); else  return xpos(d); 
-					})
-					.attr("height", barHeight - 1)
-					.append("svg:title")
-					.text(function(d,i) { 
-						return "--AUC: " + jsondata[row].auc[i] + " --Prävalenz: " + jsondata[row].praevalenz[i] + " --rel. Risiko: " + jsondata[row].rrisk[i]; 
-					})
-				;
-				bar.append("text")
-					.attr("class", "bartext")
-					.attr("x", function(d) { if (d<0)  return - 25; return 3; })
-					.attr("y", barHeight / 2)
-					.attr("dy", ".35em")
-					.text(function(d) { if (d!=0) return d; })
-					.append("svg:title")
-					.text(function(d,i) { 
-						return "--AUC: " + jsondata[row].auc[i] + " --Prävalenz: " + jsondata[row].praevalenz[i] + " --rel. Risiko: " + jsondata[row].rrisk[i]; 
-					})
-					;
-			}		
-		//if chart does not exist -> create, otherwise only update
-		if (chart.selectAll(".row").empty()) { 
-			
-			// Create rows
-			var row = chart.selectAll(".row")
-				.data(sortedkeys)
-				.enter().append("g")
-				.attr("class", "row")
-				.attr("transform", function(d, i) { 
-					return "translate(0," + y(i) + ")"; 
-				})
-				.each(row);
-			
-			row.append("line")
-				.attr("x2", spaceForLabels + chartWidth);
+			.attr("width", spaceForLabels + chartWidth)
+			.attr("height", chartHeight);
+
+		// Create bars
+		var bar = chart.selectAll("g")
+			.data(zippedData)
+			.enter().append("g")
+			.attr("transform", function(d, i) {
+			  return "translate(" + barmiddle + "," + (i * barHeight + gapBetweenGroups * (0.5 + Math.floor(i/length_per_model))) + ")";
+			})
+			;
 				
 
-			// Draw labels
-			row.append("text")
-				.attr("class", "label")
-				.attr("fill",function(d) { 
-					if (!jsondata[d].isnew) return "grey";
-					//if (d.value.rrisk[0]>0) return "darkred";
-					//if (d.value.rrisk[0]<0) return "darkgreen";
-					return "#222222";
-				})
-				//.attr("x", 0)
-				.attr("y", groupHeight / 2)
-				.attr("dy", ".35em")
-				.text(function(d) {
-				  return d;
-				})
-				.call(wrap, spaceForLabels+(barmiddle-spaceForLabels)/2)
-				.append("svg:title")
-				.text(function(d) {
-				  return d;
-				 });
+		// Create rectangles of the correct width
+		bar.append("rect")
+			.attr("fill", function(d,i) { return color(i % length_per_model); })
+			.attr("class", "bar")
+			.attr("x", function(d) { if (d<0) return -xneg(-d); else  return 0; })
+			.attr("width", function(d) { if (d<0) return xneg(-d); else  return xpos(d); })
+			.attr("height", barHeight - 1)
+			.append("svg:title")
+			.text(function(d,i) { 
+				var datapoint = Math.floor(i/length_per_model);
+				var j =0;
+				if ((i/length_per_model)>datapoint) j=1;
+				return "--AUC: " + data[datapoint].value.auc[j] + " --Prävalenz: " + data[datapoint].value.praevalenz[j] + " --abs. Risiko: " + data[datapoint].value.risk[j]; 
+			});
 
-			chart.append("g")
-				  .attr("class", "y axis")
-				  .attr("transform", "translate(" + barmiddle + ", " + -gapBetweenGroups/2 + ")")
-				  .call(yAxis);
-		} else {
-			/*var order ={};
-			for ( var i = 0; i < sortedkeys.length; i++ ) {
-				order[sortedkeys[i]]=i;
-			}*/
-			
-			var t = chart.transition().duration(1000);
+		// Add text label in bar
+		bar.append("text")
+			.attr("class", "bartext")
+			.attr("x", function(d,i) { if (d<0)  return - 25; return 3; })
+			.attr("y", barHeight / 2)
+			.attr("dy", ".35em")
+			.text(function(d) { return d; })
+			.append("svg:title")
+			.text(function(d,i) { 
+				var datapoint = Math.floor(i/length_per_model);
+				var j =0;
+				if ((i/length_per_model)>datapoint) j=1;
+				return "--AUC: " + data[datapoint].value.auc[j] + " --Prävalenz: " + data[datapoint].value.praevalenz[j] + " --abs. Risiko: " + data[datapoint].value.risk[j]; 
+			});
 
-			var row=t.selectAll(".row")
-			.delay(function(d, i) { return i*4; })
-			.attr("transform", function(d, i) { 
-					return "translate(0," + y(sortedkeys.indexOf(d)) + ")"; 
-				}).each(row);
-				
-			row.selectAll(".label")
-				.attr("fill",function(d) { 
-					if (!jsondata[d].isnew) return "grey";
-					//if (d.value.rrisk[0]>0) return "darkred";
-					//if (d.value.rrisk[0]<0) return "darkgreen";
-					return "#222222";
-				});
-				
-		}
+		// Draw labels
+		bar.append("text")
+			.attr("class", "label")
+			.attr("fill",function(d,i) { 
+				if (i % length_per_model === 0) {
+					if (!data[Math.floor(i/length_per_model)].value.isnew) return "grey";
+					if (data[Math.floor(i/length_per_model)].value.rrisk[0]>0) return "darkred";
+					if (data[Math.floor(i/length_per_model)].value.rrisk[0]<0) return "darkgreen";
+				}
+				return "black";
+			})
+			.attr("x", function(d) { return - barmiddle; })
+			.attr("y", groupHeight / 2)
+			.attr("dy", ".35em")
+			.text(function(d,i) {
+			  if (i % length_per_model === 0)
+				return data[Math.floor(i/length_per_model)].key;
+			  else
+				return ""})
+			.call(wrap, spaceForLabels+(barmiddle-spaceForLabels)/2)
+			.append("svg:title")
+			.text(function(d,i) {
+			  if (i % length_per_model === 0)
+				return data[Math.floor(i/length_per_model)].key;
+			  else
+				return ""});
 
-		d3.select('#theImg').style("visibility","hidden");
+		chart.append("g")
+			  .attr("class", "y axis")
+			  .attr("transform", "translate(" + barmiddle + ", " + -gapBetweenGroups/2 + ")")
+			  .call(yAxis);
+
+
+		/*
+		var legendRectSize = 18,
+			legendSpacing  = 4;
+
+		var legend = chart.selectAll('.legend')
+			.data(data)
+			.enter()
+			.append('g')
+			.attr('transform', function (d, i) {
+				var height = legendRectSize + legendSpacing;
+				var offset = -gapBetweenGroups/2;
+				var horz = spaceForLabels + chartWidth + 40 - legendRectSize;
+				var vert = i * height - offset;
+				return 'translate(' + horz + ',' + vert + ')';
+			});
+
+		legend.append('rect')
+			.attr('width', legendRectSize)
+			.attr('height', legendRectSize)
+			.style('fill', function (d, i) { return color(i); })
+			.style('stroke', function (d, i) { return color(i); });
+
+		legend.append('text')
+			.attr('class', 'legend')
+			.attr('x', legendRectSize + legendSpacing)
+			.attr('y', legendRectSize - legendSpacing)
+			.text(function (d) { return d.key; });
+		*/
+		$('#theImg').remove();
 	});
 }
 
@@ -637,81 +646,6 @@ function wrap(text, width) {
 		  }
 		}
 	});
-}
-
-function writelegend () {
-	var chartWidth       = 50,
-			barHeight        = 10,
-			groupHeight      = barHeight * 2,
-			spaceForLabels   = 125,
-			barmiddle = spaceForLabels
-			chartHeight=groupHeight+2;
-	var colorred = ["#b30000","red"];
-			
-	var chart = d3.select(".legend")
-				.attr("width", spaceForLabels + chartWidth)
-				.attr("height", chartHeight);
-	//chart.attr("style", "outline: thin solid darkgrey;") 
-				
-	var row1 = chart
-				.append("g");
-				row1.append("rect")
-					.attr("fill", colorred[0])
-					.attr("class", "bar")
-					.attr("x", barmiddle)
-					.attr("y", 0)
-					.attr("width", chartWidth-10)
-					.attr("height", barHeight - 1)
-					.append("svg:title")
-					.text("ambulante Diagnose")
-				;
-				row1.append("text")
-					.text("X.xx")
-					.attr("class", "bartext")
-					.attr("x", barmiddle+3)
-					.attr("y",(barHeight /2) - 1)
-					.attr("dy", ".35em");
-				row1.append("text")
-					.text("für ambulante Diagnose:")
-					.attr("class", "bartext")
-					.attr("style", "fill: black;  text-anchor: end;") 
-					.attr("x", barmiddle - 3)
-					.attr("y",(barHeight /2) - 1)
-					.attr("dy", ".35em");
-	var row2 = chart
-				.append("g");
-				
-		row2.append("rect")
-					.attr("fill", colorred[1])
-					.attr("class", "bar")
-					.attr("x", barmiddle)
-					.attr("y", barHeight)
-					.attr("width", chartWidth-20)
-					.attr("height", barHeight - 1)
-					.append("svg:title")
-					.text("Krankenhauseinweisung")
-				;
-				row2.append("text")
-					.text("Y.yy")
-					.attr("class", "bartext")
-					.attr("x", barmiddle+3)
-					.attr("y",barHeight + (barHeight /2))
-					.attr("dy", ".35em");
-				row2.append("text")
-					.text("für Krankenhauseinweisung:")
-					.attr("class", "bartext")
-					.attr("style", "fill: black; text-anchor: end;") 
-					.attr("x", barmiddle - 3)
-					.attr("y",barHeight + (barHeight /2))
-					.attr("dy", ".35em");
-					
-				/*chart.append("text")
-					.attr("class", "label")
-					.attr("fill","#222222")
-					.attr("y", groupHeight / 2)
-					.attr("dy", ".35em")
-					.text("Risiken für: ")
-				;*/
 }
 </script>
 

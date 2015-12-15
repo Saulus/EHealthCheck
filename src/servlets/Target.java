@@ -6,18 +6,18 @@ import hex.genmodel.easy.prediction.BinomialModelPrediction;
 
 public class Target {
 	String name;
-	double praevalenz;
-	double auc_train;
-	double auc_test;
+	double praevalenz = 0;
+	double auc_train = 0;
+	double auc_test = 0;
 	hex.genmodel.GenModel rawModel;
 	EasyPredictModelWrapper model;
 	
 
 	public Target(String name, String mean, String auc_train, String auc_test, String model_id) throws Exception {
 		this.name=name;
-		this.praevalenz=Double.parseDouble(mean);
-		this.auc_train=Double.parseDouble(auc_train);
-		this.auc_test=Double.parseDouble(auc_test);
+		if (!mean.isEmpty()) this.praevalenz=Double.parseDouble(mean);
+		if (!auc_train.isEmpty()) this.auc_train=Double.parseDouble(auc_train);
+		if (!auc_train.isEmpty()) this.auc_test=Double.parseDouble(auc_test);
 		this.rawModel = (hex.genmodel.GenModel) Class.forName(model_id).newInstance();
 		this.model = new EasyPredictModelWrapper(rawModel);
 	}
@@ -36,9 +36,10 @@ public class Target {
 	}
 	
 	
-	public double getRelativeRiskFactor (RowData features) throws Exception {
+	public double getRiskFactor (RowData features) throws Exception {
 		BinomialModelPrediction p = model.predictBinomial(features);
-		double risk = p.classProbabilities[1]/this.praevalenz;
+		double risk = p.classProbabilities[1]; //(double) Math.round(p.classProbabilities[1]*100)/100; ///this.praevalenz
+		if (Double.isNaN(risk)) return 0;
 		return risk;
 	}
 	

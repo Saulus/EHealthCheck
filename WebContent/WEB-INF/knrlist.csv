@@ -1,359 +1,359 @@
-KNr ;Bezeichnung 
-1;1 Intestinale Infektionen
-2;2 Bakterielle Zoonosen und andere schwerwiegende bakterielle Infektionen
-3;3 Tuberkulose, exkl. des Zentralnervensystems
-4;4 Streptokokken-Pharyngitis / Scharlach
-5;5 Sepsis / SIRS
-6;6 Geschlechtskrankheiten, exkl. Neurosyphilis
-7;7 Sonstige Spirochäteninfektionen
-8;8 Lyme disease / Borreliose
-9;9 Chlamydieninfektionen
-10;10 Rickettsiosen
-11;11 Herpes simplex
-12;12 Herpes zoster (Gürtelrose), exkl. neurologische Komplikationen
-13;13 Virale Hepatitis A und unspezifizierte Hepatitis, ohne Leberkoma
-14;14 HIV / AIDS
-15;15 Infektionen durch opportunistische Erreger
-16;16 Andere virale Infektionen
-17;17 Dermatomykose (Pilzerkrankungen der Haut, z.B. Fußpilz)
-18;18 Mykosen
-19;19 Protozoenkrankheiten (inkl. Malaria)
-20;20 Helminthosen
-21;21 Parasitenbefall der Haut
-22;22 Spätfolgen von Infektionen, exkl. des Zentralnervensystems
-23;23 Andere Infektionen
-24;24 Bösartige Neubildungen der Lippe, der Mundhöhle und des Pharynx
-25;25 Bösartige Neubildungen der Verdauungsorgane
-26;26 Bösartige Neubildungen der Atmungsorgane und sonstiger intrathorakaler Organe
-27;27 Bösartige Neubildungen der Niere, der Harnwege und der Nebenniere
-28;28 Bösartige Neubildungen der Knochen, des Stütz- und Weichteilgewebes
-29;29 Malignes Melanom
-30;30 Bösartige Neubildungen der Haut
-31;31 Bösartige Neubildungen der Brustdrüse
-32;32 Bösartige Neubildungen der Genitalorgane
-33;33 Bösartige Neubildungen des Auges, Gehirns und sonstiger Teile des Zentralnervensystems einschließlich Hypo- und Epiphyse
-34;34 Bösartige Neubildungen der Schilddrüse, Nebenschilddrüse, Paraganglien sowie weiterer endokriner Drüsen
-35;35 Bösartige Neubildungen sekundärer, nicht näher bezeichneter oder multipler Lokalisation (inkl. Komplikationen)
-36;36 Lymphome und Leukämien
-37;37 Carcinoma in situ
-38;38 Gutartige Neubildungen der Mundhöhle, des Pharynx und der Verdauungsorgane
-39;39 Gutartige Neubildungen des Mittelohres, der Atmungsorgane und sonstiger, nicht näher bezeichneter intrathorakaler Organe
-40;40 Gutartige Neubildungen des Knochens und des Gelenkknorpels, der Haut, des Bindegewebes und anderer Weichteilgewebe
-41;41 Gutartige Neubildungen der weiblichen und männlichen Genitalorgane sowie der Harnorgane
-42;42 Gutartige Neubildungen endokriner Drüsen, des Auges, des ZNS und an sonstigen und nicht näher bezeichneten Lokalisationen
-43;43 Neubildungen unsicheren oder unbekannten Verhaltens unterschiedlicher Organe
-44;44 Myeloproliferative/myelodysplastische Erkrankungen
-45;45 Megaloblastische Anämie und andere Mangelanämien (perniziöse Anämie / Folsäuremangel)
-46;46 Hereditäre hämolytische Anämien
-47;47 Erworbene Anämien
-48;48 Aplastische und sideroblastische Anämien
-50;50 Koagulopathien, Purpura und sonstige hämorrhagische Diathesen
-51;51 Agranulozytose und Neutropenie
-52;52 Sonstige Erkrankungen des Immunsystems
-53;53 Andere und nicht näher bezeichnete Erkrankungen des Blutes
-54;54 Neugeborenen-Hypothyreose (Kretinismus)
-55;55 Struma (v.a. Jodmangelstruma)
-56;56 Thyreotoxikose, einschließlich Morbus Basedow
-57;57 Schilddrüsen-Erkrankungen, exkl. Struma und Thyreotoxikose
-58;58 Diabetes mellitus
-59;59 Hypoglykämien
-60;60 Sonstige Störungen der inneren Sekretion des Pankreas
-61;61 Schwerwiegende metabolische oder endokrine Störungen
-62;62 Ovarielle Dysfunktion
-63;63 Testikuläre Dysfunktion
-64;64 Energie- und Eiweißmangelernährung
-65;65 Vitamin B-Mangel
-66;66 Andere Formen der Avitaminosen
-67;67 Mangel an Spurenelementen
-68;68 Sonstige alimentäre Mangelzustände
-69;69 Adipositas (mit Krankheitsbezug)
-70;70 Hypervitaminosen und andere Formen der Hyperalimentation
-71;71 Laktoseintoleranz, andere / nicht näher bezeichnete Störungen des Kohlenhydratstoffwechsels
-72;72 Störungen des Fettstoffwechsels (zu hohes Cholesterin), exkl. Lipidosen
-73;73 Sonstige und nicht näher bezeichnete Stoffwechselstörungen
-74;74 Demenz (einschließlich Alzheimer Erkrankung und vaskuläre Demenz)
-75;75 Delir und Enzephalopathie
-76;76 Nicht-psychotisch organische Störung
-77;77 Schwerwiegender Alkohol- und Drogen-Missbrauch
-78;78 Psychische und Verhaltensstörungen durch Tabak
-79;79 Schizophrenie, schizotype und wahnhafte Störungen
-80;80 Bipolare affektive Störungen
-81;81 Depression
-82;82 Angst- und Zwangsspektrumsstörungen
-83;83 Akute schwerwiegende Belastungsreaktion und sonstige Anpassungsstörungen
-84;84 Somatoforme Störungen / Dissoziative Störungen
-85;85 Chronischer Schmerz
-86;86 Essstörungen
-87;87 Persönlichkeits- und Verhaltensstörungen
-88;88 Leichter / nicht näher bezeichneter Entwicklungsrückstand / Lernbehinderung
-89;89 Mäßiger Entwicklungsrückstand / Lernbehinderung
-90;90 Schwerer oder schwerster Entwicklungsrückstand / Intelligenzminderung
-91;91 Entwicklungsstörungen
-92;92 Tiefgreifende Entwicklungsstörung
-93;93 Verhaltens- und emotionale Störungen mit Beginn in der Kindheit und Jugend
-94;94 Andere psychische Erkrankungen
-95;95 Nicht virale Meningitis / Enzephalitis
-96;96 Virale Meningitis / Enzephalitis
-97;97 Meningitis unbekannter Ursache
-98;98 Spätfolgen von Infektionen des Zentralnervensystems
-99;99 Systematrophien, die vorwiegend das Zentralnervensystem betreffen
-100;100 Morbus Parkinson und andere Basalganglienerkrankungen
-101;101 Sekundärer Parkinsonismus und andere extrapyramidale Bewegungsstörungen
-102;102 Sonstige degenerative Krankheiten des Nervensystems
-103;103 Multiple Sklerose und andere demyelisierende Erkrankungen des ZNS
-104;104 Epilepsie
-105;105 Migräne-Kopfschmerz
-106;106 Cluster-Kopfschmerz
-107;107 Sonstige näher bezeichnete Kopfschmerzsyndrome
-108;108 Verschluss extrakranieller hirnversorgender Gefäße und transitorische ischämische Attacken
-109;109 Schlaganfall und Komplikationen
-110;110 Zerebrale Atherosklerose und Aneurysmen
-111;111 Schlafapnoe, Narkolepsie und Kataplexie
-112;112 Trigeminusneuralgie, Erkrankungen des Nervus fazialis und anderer Hirnnerven
-113;113 Erkrankungen / Läsionen von Nervenwurzeln / Plexus
-115;115 (Mono)neuropathien
-116;116 Nervenverletzungen, exkl. Verletzungen des Rückenmarks und des Gehirns
-117;117 Neuropathien
-118;118 Myopathien
-119;119 Erkrankungen der motorischen Endplatte / Myasthenia gravis
-120;120 Muskeldystrophie
-121;121 Ausgeprägte schwere Lähmungen / Verletzungen des Rückenmarks / Angeborene Fehlbildungen des Nervensystems
-122;122 Erkrankungen des autonomen Nervensystems
-123;123 Hydrozephalus und andere schwerwiegende Hirnschädigungen
-124;124 Anderer / nicht näher bezeichneter Krankheitszustand des Zentralnervensystems
-125;125 Kongenitale Anomalien des Auges
-126;126 Augenverletzung
-127;127 Fremdkörper im Ohr / in der Nase / im Rachen / im Kehlkopf
-128;128 Schwere Entzündung des Auges
-129;129 Uveitis
-130;130 Katarakt
-131;131 Netzhautablösung und Netzhautriss
-134;134 Netzhautgefäßverschluss
-135;135 Makuladegeneration
-136;136 Retinopathien und sonstige Affektionen der Netzhaut
-137;137 Glaukom
-138;138 Affektionen des Glaskörpers und des Augapfels
-139;139 Erkrankungen des Nervus opticus und der Sehbahn, einschließlich Optikusneuritis
-140;140 Refraktionsanomalien und Akkomodationsstörungen (z.B. Kurzsichtigkeit)
-141;141 Blindheit, Sehverlust
-142;142 Andere und nicht näher bezeichnete Augenerkrankungen
-143;143 Schwerwiegende Entzündungen des Ohres
-144;144 Mittelohrentzündung, exkl. chronisch-eitrige Formen
-145;145 Chronisch mesotympanale eitrige Otitis media
-146;146 Morbus Ménière
-147;147 Schwindel, exkl. Morbus Ménière
-148;148 Hörverlust
-149;149 Andere Erkrankungen des Ohrs
-150;150 Rheumatisches Fieber / rheumatische Herzerkrankung
-151;151 Erkrankungen der Herzklappen
-152;152 Hypertonie
-153;153 Ischämische Herzkrankheit
-154;154 Pulmonale Herzkrankheit und Erkrankungen des Lungenkreislaufes
-155;155 Perikarditis und andere Erkrankungen des Perikards
-156;156 Endokarditis / Myokarditis
-157;157 AV-Block und sonstige Blockbilder im Erregungsleitungssystem des Herzens
-159;159 Ventrikuläre Tachykardie / Arrhythmie, Herzstillstand
-160;160 Vorhofarrhythmien und sonstige kardiale Erregungsleitungsstörungen
-161;161 Extrasystolen
-162;162 Herzinsuffizienz
-163;163 Andere und nicht näher bezeichnete Herzerkrankungen
-164;164 Atherosklerose, periphere Gefäßerkrankung
-165;165 Rupturiertes Aortenaneurysma
-166;166 Aortenaneurysma, ohne Erwähnung einer Ruptur
-167;167 Arterielles Aneurysma (exkl. d. Aorta)
-168;168 Gefäßerkrankungen der Niere (Embolie, Parenchymblutung, Nierenvenenthrombose, Niereninfarkt)
-169;169 Arterielle Embolie und Thrombose
-170;170 Erkrankungen der Kapillaren
-171;171 Tiefe Venenthrombose
-172;172 Thrombophlebitis, exkl. tiefer Venen
-173;173 Varizen
-174;174 Andere Erkrankungen des Gefäßsystems / Postthrombotisches Syndrom (chronisch venöse Insuffizienz)
-175;175 Sonstige Venenerkrankungen
-176;176 Nicht-infektiöse Erkrankungen des Lymphsystems
-177;177 Hypotonie
-178;178 Sonstige (näher bezeichnete) Erkrankungen des Kreislaufsystems
-179;179 Akute Infektion der Nasen-Rachen-Schleimhäute (z.B. grippaler Infekt)
-180;180 Influenza ohne Pneumonie
-181;181 Pneumonie und andere infektiöse Lungenerkrankungen
-182;182 Akute Bronchitis und Bronchiolitis
-183;183 Chronische Sinusitis
-184;184 Nasenpolypen / Allergische Rhinitis (z.B. Heuschnupfen)
-185;185 Erkrankungen des Kehlkopfs und der Stimmbänder
-186;186 Andere Erkrankungen der oberen Atemwege
-187;187 Einfache bzw. nicht näher bezeichnete chronische Bronchitis
-188;188 Mukoviszidose
-189;189 Emphysem / Chronische obstruktive Bronchitis
-190;190 Asthma bronchiale
-191;191 Sarkoidose
-192;192 Lungenkrankheiten durch exogene Substanzen
-193;193 Fremdkörper in der Luftröhre / im Bronchus / in der Lunge
-194;194 Akutes Lungenödem und respiratorische Insuffizienz
-195;195 Löffler-Syndrom
-196;196 Postinflammatorische und interstitielle Lungenfibrose
-197;197 Sonstige Krankheiten der Pleura
-198;198 Andere und nicht näher bezeichnete Erkrankungen der Lunge oder des respiratorischen Systems
-199;199 Erkrankungen der Zähne, des Zahnfleischs und des Kiefers (z.B. Gingivitis, Parodontitis apicalis)
-200;200 Erkrankungen der Speicheldrüsen
-201;201 Andere Erkrankungen der Mundhöhle / der Zunge / des Kiefers
-202;202 Angeborene Anomalien des Ohrs, des Gesichts, des Halses, der Nase, des Munds und des Rachens
-203;203 Erkrankungen des Ösophagus
-204;204 Ösophagusatresie / -stenose, andere angeborene gastrointestinale Anomalien (Alter > 5 Jahre)
-205;205 Peptisches Ulkus, gastrointestinale Blutung und/oder Perforation
-206;206 Störungen / Symptome an Magen / Darm (exkl. Obstruktion, Ulkus und Blutung)
-207;207 Obstruktion des Pylorus / des Duodenums
-208;208 Appendizitis, auch mit Perforation und Peritonitis
-209;209 Eingeweidebruch mit Komplikationen
-210;210 Eingeweidebruch ohne Komplikationen
-211;211 Chronisch entzündliche Darmerkrankung (Morbus Crohn / Colitis ulcerosa)
-212;212 Mesenterialarterieninfarkt, intestinale Durchblutungsinsuffizienz
-213;213 Ileus
-214;214 Darmdivertikel
-215;215 Erkrankungen des Anus / Rektums
-216;216 Hämorrhoiden
-217;217 Darmabszess, Fistel und andere näher bezeichnete Erkrankungen
-218;218 Peritonitis
-219;219 Erkrankungen des Bauchfells, exkl. Peritonitis
-220;220 Leberzirrhose (inkl. Komplikationen)
-221;221 Akute schwere Lebererkrankung
-222;222 Chronische Hepatitis
-223;223 Toxische, nicht virale Hepatitis und andere Lebererkrankungen
-224;224 Gallensteine mit Cholezystitis und andere Erkrankungen der Gallenblase
-225;225 Erkrankungen der Gallenblase und -wege
-226;226 Näher bezeichnete Erkrankung der Gallenwege (Cholangitis, Verschluß, Perforation)
-227;227 Erkrankungen des Pankreas
-228;228 Intestinale Malabsorption
-229;229 Andere und nicht näher bezeichnete Störungen des Verdauungssystems
-230;230 Fremdkörper im Gastrointestinaltrakt
-231;231 Bakterielle Hautinfektionen
-232;232 Pemphiguskrankheiten und Pemphigoidkrankheiten
-233;233 Blasenbildende Dermatose exkl. Pemphiguskrankheiten und Pemphigoidkrankheiten
-234;234 Dermatitis durch aufgenommene Nahrungsmittel, Hauteruptionen durch Drogen oder Arzneimittel
-235;235 Psoriasis und Parapsoriasis (inkl. Gelenkbeteiligung)
-236;236 Erythema exsudativum multiforme, einschließlich toxische epidermale Nekrolyse (Lyell-Syndrom)
-237;237 Urtikaria und Erythem
-238;238 Strahleneinwirkungen / Verbrennungen, exkl. Verbrennungen dritten Grades oder Verbrennungen von 10% und mehr der Körperoberfläche
-239;239 Ausgedehnte Verbrennungen
-240;240 Erkrankungen der Finger- und Zehennägel
-241;241 Angeborene Anomalien der Haut
-242;242 Seborrhoische Keratose
-243;243 Dekubitalgeschwüre
-244;244 (Diskoider) Lupus erythematosus
-245;245 Hautulkus (ohne Dekubitalgeschwür)
-246;246 Andere Erkrankungen der Haut
-247;247 Reaktive Arthritiden
-248;248 Rheumatoide Arthritis und entzündliche Bindegewebskrankheiten
-249;249 Gicht / Arthritis urica
-250;250 Osteoarthrose der großen Gelenke
-251;251 Osteoarthrose sonstiger oder nicht weiter spezifizierter Gelenke
-252;252 Senkfuß / Plattfuß, erworbene Zehendeformitäten
-253;253 Erworbene Gliedmaßendeformitäten, exkl. Zehendeformitäten, exkl. Senkfuß / Plattfuß
-254;254 Binnenschädigung des Knies, Luxation, Verstauchung und Zerrung des Kniegelenkes und von Bändern des Kniegelenkes
-255;255 Gelenkerkrankungen, Verrenkungen, Gelenkschmerzen / -steifigkeit, exkl. Gicht
-256;256 Skoliose, Deformität der Wirbelsäule
-257;257 Osteochondrosis deformans juvenilis (Morbus Scheuermann) / juvenile lumbar osteochondrosis, Epiphyseolysis capitis femoris
-258;258 Wirbelgleiten / Spondylolisthesis / Spondylolyse, angeboren oder erworben
-259;259 Wirbelkörperluxation (Subluxation)
-260;260 Bandscheibenerkrankungen (Bandscheibenvorfall, -verschleiß)
-261;261 Spondylose und assoziierte Erkrankungen (Osteoarthrose der Wirbelsäule)
-262;262 Spinalkanalstenose
-263;263 Nicht näher bezeichneter Rückenschmerz und andere Schmerzzustände / Erkrankungen des Rückens / Nackens
-264;264 Erkrankungen der Muskeln
-265;265 Erkrankungen der Synovialis und der Sehnen
-266;266 Sonstige Erkrankungen der Weichteilgewebe
-267;267 Osteoporose und Folgeerkrankungen
-268;268 Osteomalazie / Rachitis
-269;269 Entzündung / Nekrose von Knochen
-270;270 Andere Erkrankungen des Knochens und Knorpels (z.B. Osteodystrophia deformans / Paget's disease of bone)
-271;271 Nephritis
-272;272 Refluxuropathie und Niereninfektion
-273;273 Niereninfektion
-274;274 Niereninsuffizienz
-275;275 Nephrolithiasis / Uretherstein / Blasenstein (z.B. Nierenstein)
-276;276 Nierenzysten
-277;277 Zystitis, andere Infektionen der Harnwege
-278;278 Neurogene Blase
-279;279 Harnröhrenstriktur
-280;280 Angeborene Anomalien der Nieren / der Harnwege, exkl. Verlegungen / Zysten
-281;281 Fremdkörper im Geschlechtstrakt / Harntrakt
-282;282 Urininkontinenz
-283;283 Andere Erkrankungen der Harnwege
-284;284 Benigne Prostatahyperplasie
-285;285 Prostataerkrankungen, exkl. benigne Prostatahyperplasie
-286;286 Erkrankungen der männlichen Genitalorgane inkl. Impotenz organischen Ursprungs
-287;287 Männliche Unfruchtbarkeit
-288;288 Angeborene Anomalien der männlichen Genitalorgane
-289;289 Entzündliche Beckenerkrankung (PID)
-290;290 Entzündliche Erkrankungen der Vagina und der Zervix
-291;291 Endometriose
-292;292 Genitalprolaps bei der Frau
-293;293 Erkrankungen der weiblichen Beckenorgane
-294;294 Ovarialzysten
-295;295 Nicht-entzündliche Erkrankungen der weiblichen Genitalorgane
-296;296 Andere Erkrankungen der weiblichen Genitalorgane
-297;297 Angeborene Anomalien der weiblichen oder nicht näher bezeichneten Genitalorgane
-298;298 Klimakterische Störungen
-299;299 Weibliche Unfruchtbarkeit
-300;300 Fehlgeburt / Schwangerschaftsabbruch / Extrauteringravidität
-301;301 Bestehende Schwangerschaft (einschl. Komplikationen)
-302;302 Entbindung / abgeschlossene Schwangerschaft (einschl. Komplikationen)
-303;303 Lebendgeborene (ohne weitere Angaben)
-304;304 Schädigung des Neugeborenen durch Alkohol / Drogen, einschließlich Alkohol-Embryopathie (mit Dysmorphien)
-305;305 Risikogeburt
-306;306 Infektionen des Neugeborenen
-307;307 Blutungen beim Neugeborenen
-308;308 Hämolyse während der Perinatalperiode
-309;309 Neugeborenenikterus
-310;310 Transitorische endokrine Störungen des Neugeborenen
-311;311 Sonstige Erkrankungen des Verdauungssystems in der Perinatalperiode
-312;312 Probleme der Haut / Temperatur beim Neugeborenen
-313;313 Andere Probleme in der Perinatalperiode
-314;314 Angeborene schwere Herzfehler (<18 Jahre)
-315;315 Angeborene schwere Herzfehler (>17 Jahre)
-316;316 Sonstige angeborene Anomalien des Herzens und des Gefäßsystems
-317;317 Angeborene Anomalie der Lunge / des respiratorischen Systems
-318;318 Angeborene Fehlbildungen des respiratorischen Systems und des Magen-Darm-Traktes bei Kindern (bis max. 5 Jahre)
-319;319 Lippenspalte / Gaumenspalte
-320;320 Andere angeborene muskuloskeletale Anomalien
-321;321 Angeborene Anomalien der Wirbelsäule, exkl. Spondylolisthesis / Spondylolyse
-322;322 Angeborene, schwere Entwicklungsstörungen des Skeletts und des Bindegewebes
-323;323 Nicht näher bezeichnete Fehlbildungssyndrome
-324;324 Nicht näher bezeichnete Chromosomenanomalien
-325;325 Gonosomale Chromosomenanomalien (z.B. Klinefelter-Syndrom / Turner-Syndrom)
-327;327 Schweres Schädel-Hirn-Trauma
-328;328 Mittelschweres Schädel-Hirn-Trauma
-329;329 Leichtes Schädel-Hirn-Trauma
-330;330 Wirbelfraktur
-331;331 Offene Rippenfraktur, Fraktur des Sternums, Fraktur der Kehlkopfknochen, Verletzung der Trachea, Wirbelfraktur
-332;332 Geschlossene Rippenfraktur
-333;333 Innere Verletzungen
-334;334 Beckenfraktur
-335;335 Frakturen des Schlüsselbeins, des Schulterblatts und des Humerus
-336;336 Schulterluxation
-337;337 Traumatische Amputation einer Extremität
-338;338 Fraktur der Hand / des Handgelenks / des Unterarms
-339;339 Distorsion / Verrenkung
-340;340 Offene Wunde / Verletzung des Unterarms
-341;341 Traumatische Gelenkluxation, exkl. der Hüfte, des Knies, der Schulter und der Wirbel
-342;342 Femurfraktur
-343;343 Luxation des Hüftgelenks
-344;344 Frakturen der Patella, Tibia, Fibula, multiple Frakturen der oberen / unteren Extremität
-345;345 Frakturen des Sprunggelenks
-346;346 Offene Wunde, exkl. am Auge und Unterarm
-347;347 Fraktur des Fußes
-349;349 Fraktur nicht näher bezeichneter Knochen
-351;351 Erfrierungen
-352;352 Vergiftungen durch andere oder nicht näher bezeichnete nicht medizinisch verwendete Substanzen
-353;353 Missbrauch von Personen
-354;354 Schock
-355;355 Nicht näher bezeichnete allergische Reaktion
-356;356 Frühe Komplikationen durch Trauma
-357;357 Näher bezeichnete Komplikationen bei Patienten während oder nach chirurgischer oder medizinischer Behandlung
-358;358 Spätfolgen von Verletzungen, exkl. Spätfolgen am Rückenmark, von Schädel / Gesichtsschädelfrakturen und Spätfolgen intrakranieller Verletzungen
-359;359 Sonstige und nicht näher bezeichnete Schäden durch äußere Ursachen
-360;360 Andere Unfallfolgen
-361;361 Status nach Organtransplantation (inkl. Komplikationen)
-362;362 Schrumpf- und sonstige kleine Niere unbekannter Ursache
-363;363 Pathologische Frakturen, exkl. Osteoporose
-364;364 Kontusion / (oberflächliche) Verletzung des Kopfes und Halses
-365;365 Kontusion / (oberflächliche) Verletzung des Rumpfes
-366;366 Kontusion / (oberflächliche) Verletzung der Extremitäten, inkl. nicht näher bez. Lokalisationen
+KNr;Bezeichnung
+1;Intestinale Infektionen
+2;Bakterielle Zoonosen und andere schwerwiegende bakterielle Infektionen
+3;Tuberkulose, exkl. des Zentralnervensystems
+4;Streptokokken-Pharyngitis / Scharlach
+5;Sepsis / SIRS
+6;Geschlechtskrankheiten, exkl. Neurosyphilis
+7;Sonstige Spirochäteninfektionen
+8;Lyme disease / Borreliose
+9;Chlamydieninfektionen
+10;Rickettsiosen
+11;Herpes simplex
+12;Herpes zoster (Gürtelrose), exkl. neurologische Komplikationen
+13;Virale Hepatitis A und unspezifizierte Hepatitis, ohne Leberkoma
+14;HIV / AIDS
+15;Infektionen durch opportunistische Erreger
+16;Andere virale Infektionen
+17;Dermatomykose (Pilzerkrankungen der Haut, z.B. Fußpilz)
+18;Mykosen
+19;Protozoenkrankheiten (inkl. Malaria)
+20;Helminthosen
+21;Parasitenbefall der Haut
+22;Spätfolgen von Infektionen, exkl. des Zentralnervensystems
+23;Andere Infektionen
+24;Bösartige Neubildungen der Lippe, der Mundhöhle und des Pharynx
+25;Bösartige Neubildungen der Verdauungsorgane
+26;Bösartige Neubildungen der Atmungsorgane und sonstiger intrathorakaler Organe
+27;Bösartige Neubildungen der Niere, der Harnwege und der Nebenniere
+28;Bösartige Neubildungen der Knochen, des Stütz- und Weichteilgewebes
+29;Malignes Melanom
+30;Bösartige Neubildungen der Haut
+31;Bösartige Neubildungen der Brustdrüse
+32;Bösartige Neubildungen der Genitalorgane
+33;Bösartige Neubildungen des Auges, Gehirns und sonstiger Teile des Zentralnervensystems einschließlich Hypo- und Epiphyse
+34;Bösartige Neubildungen der Schilddrüse, Nebenschilddrüse, Paraganglien sowie weiterer endokriner Drüsen
+35;Bösartige Neubildungen sekundärer, nicht näher bezeichneter oder multipler Lokalisation (inkl. Komplikationen)
+36;Lymphome und Leukämien
+37;Carcinoma in situ
+38;Gutartige Neubildungen der Mundhöhle, des Pharynx und der Verdauungsorgane
+39;Gutartige Neubildungen des Mittelohres, der Atmungsorgane und sonstiger, nicht näher bezeichneter intrathorakaler Organe
+40;Gutartige Neubildungen des Knochens und des Gelenkknorpels, der Haut, des Bindegewebes und anderer Weichteilgewebe
+41;Gutartige Neubildungen der weiblichen und männlichen Genitalorgane sowie der Harnorgane
+42;Gutartige Neubildungen endokriner Drüsen, des Auges, des ZNS und an sonstigen und nicht näher bezeichneten Lokalisationen
+43;Neubildungen unsicheren oder unbekannten Verhaltens unterschiedlicher Organe
+44;Myeloproliferative/myelodysplastische Erkrankungen
+45;Megaloblastische Anämie und andere Mangelanämien (perniziöse Anämie / Folsäuremangel)
+46;Hereditäre hämolytische Anämien
+47;Erworbene Anämien
+48;Aplastische und sideroblastische Anämien
+50;Koagulopathien, Purpura und sonstige hämorrhagische Diathesen
+51;Agranulozytose und Neutropenie
+52;Sonstige Erkrankungen des Immunsystems
+53;Andere und nicht näher bezeichnete Erkrankungen des Blutes
+54;Neugeborenen-Hypothyreose (Kretinismus)
+55;Struma (v.a. Jodmangelstruma)
+56;Thyreotoxikose, einschließlich Morbus Basedow
+57;Schilddrüsen-Erkrankungen, exkl. Struma und Thyreotoxikose
+58;Diabetes mellitus
+59;Hypoglykämien
+60;Sonstige Störungen der inneren Sekretion des Pankreas
+61;Schwerwiegende metabolische oder endokrine Störungen
+62;Ovarielle Dysfunktion
+63;Testikuläre Dysfunktion
+64;Energie- und Eiweißmangelernährung
+65;Vitamin B-Mangel
+66;Andere Formen der Avitaminosen
+67;Mangel an Spurenelementen
+68;Sonstige alimentäre Mangelzustände
+69;Adipositas (mit Krankheitsbezug)
+70;Hypervitaminosen und andere Formen der Hyperalimentation
+71;Laktoseintoleranz, andere / nicht näher bezeichnete Störungen des Kohlenhydratstoffwechsels
+72;Störungen des Fettstoffwechsels (zu hohes Cholesterin), exkl. Lipidosen
+73;Sonstige und nicht näher bezeichnete Stoffwechselstörungen
+74;Demenz (einschließlich Alzheimer Erkrankung und vaskuläre Demenz)
+75;Delir und Enzephalopathie
+76;Nicht-psychotisch organische Störung
+77;Schwerwiegender Alkohol- und Drogen-Missbrauch
+78;Psychische und Verhaltensstörungen durch Tabak
+79;Schizophrenie, schizotype und wahnhafte Störungen
+80;Bipolare affektive Störungen
+81;Depression
+82;Angst- und Zwangsspektrumsstörungen
+83;Akute schwerwiegende Belastungsreaktion und sonstige Anpassungsstörungen
+84;Somatoforme Störungen / Dissoziative Störungen
+85;Chronischer Schmerz
+86;Essstörungen
+87;Persönlichkeits- und Verhaltensstörungen
+88;Leichter / nicht näher bezeichneter Entwicklungsrückstand / Lernbehinderung
+89;Mäßiger Entwicklungsrückstand / Lernbehinderung
+90;Schwerer oder schwerster Entwicklungsrückstand / Intelligenzminderung
+91;Entwicklungsstörungen
+92;Tiefgreifende Entwicklungsstörung
+93;Verhaltens- und emotionale Störungen mit Beginn in der Kindheit und Jugend
+94;Andere psychische Erkrankungen
+95;Nicht virale Meningitis / Enzephalitis
+96;Virale Meningitis / Enzephalitis
+97;Meningitis unbekannter Ursache
+98;Spätfolgen von Infektionen des Zentralnervensystems
+99;Systematrophien, die vorwiegend das Zentralnervensystem betreffen
+100;Morbus Parkinson und andere Basalganglienerkrankungen
+101;Sekundärer Parkinsonismus und andere extrapyramidale Bewegungsstörungen
+102;Sonstige degenerative Krankheiten des Nervensystems
+103;Multiple Sklerose und andere demyelisierende Erkrankungen des ZNS
+104;Epilepsie
+105;Migräne-Kopfschmerz
+106;Cluster-Kopfschmerz
+107;Sonstige näher bezeichnete Kopfschmerzsyndrome
+108;Verschluss extrakranieller hirnversorgender Gefäße und transitorische ischämische Attacken
+109;Schlaganfall und Komplikationen
+110;Zerebrale Atherosklerose und Aneurysmen
+111;Schlafapnoe, Narkolepsie und Kataplexie
+112;Trigeminusneuralgie, Erkrankungen des Nervus fazialis und anderer Hirnnerven
+113;Erkrankungen / Läsionen von Nervenwurzeln / Plexus
+115;(Mono)neuropathien
+116;Nervenverletzungen, exkl. Verletzungen des Rückenmarks und des Gehirns
+117;Neuropathien
+118;Myopathien
+119;Erkrankungen der motorischen Endplatte / Myasthenia gravis
+120;Muskeldystrophie
+121;Ausgeprägte schwere Lähmungen / Verletzungen des Rückenmarks / Angeborene Fehlbildungen des Nervensystems
+122;Erkrankungen des autonomen Nervensystems
+123;Hydrozephalus und andere schwerwiegende Hirnschädigungen
+124;Anderer / nicht näher bezeichneter Krankheitszustand des Zentralnervensystems
+125;Kongenitale Anomalien des Auges
+126;Augenverletzung
+127;Fremdkörper im Ohr / in der Nase / im Rachen / im Kehlkopf
+128;Schwere Entzündung des Auges
+129;Uveitis
+130;Katarakt
+131;Netzhautablösung und Netzhautriss
+134;Netzhautgefäßverschluss
+135;Makuladegeneration
+136;Retinopathien und sonstige Affektionen der Netzhaut
+137;Glaukom
+138;Affektionen des Glaskörpers und des Augapfels
+139;Erkrankungen des Nervus opticus und der Sehbahn, einschließlich Optikusneuritis
+140;Refraktionsanomalien und Akkomodationsstörungen (z.B. Kurzsichtigkeit)
+141;Blindheit, Sehverlust
+142;Andere und nicht näher bezeichnete Augenerkrankungen
+143;Schwerwiegende Entzündungen des Ohres
+144;Mittelohrentzündung, exkl. chronisch-eitrige Formen
+145;Chronisch mesotympanale eitrige Otitis media
+146;Morbus Ménière
+147;Schwindel, exkl. Morbus Ménière
+148;Hörverlust
+149;Andere Erkrankungen des Ohrs
+150;Rheumatisches Fieber / rheumatische Herzerkrankung
+151;Erkrankungen der Herzklappen
+152;Hypertonie
+153;Ischämische Herzkrankheit
+154;Pulmonale Herzkrankheit und Erkrankungen des Lungenkreislaufes
+155;Perikarditis und andere Erkrankungen des Perikards
+156;Akute Endokarditis / Myokarditis
+157;AV-Block oder sonstige kardiale Erregungsbildungs- oder Reizleitungsstörungen
+159;Ventrikuläre Tachykardie / Arrhythmie, Herzstillstand
+160;Vorhofarrhythmie
+161;Extrasystolen
+162;Herzinsuffizienz
+163;Andere und nicht näher bezeichnete Herzerkrankungen
+164;Atherosklerose, periphere Gefäßerkrankung
+165;Rupturiertes Aortenaneurysma
+166;Aortenaneurysma, ohne Erwähnung einer Ruptur
+167;Arterielles Aneurysma (exkl. d. Aorta)
+168;Gefäßerkrankungen der Niere (Embolie, Parenchymblutung, Nierenvenenthrombose, Niereninfarkt)
+169;Arterielle Embolie und Thrombose
+170;Erkrankungen der Kapillaren
+171;Tiefe Venenthrombose
+172;Thrombophlebitis, exkl. tiefer Venen
+173;Varizen
+174;Andere Erkrankungen des Gefäßsystems / Postthrombotisches Syndrom (chronisch venöse Insuffizienz)
+175;Sonstige Venenerkrankungen
+176;Nicht-infektiöse Erkrankungen des Lymphsystems
+177;Hypotonie
+178;Sonstige (näher bezeichnete) Erkrankungen des Kreislaufsystems
+179;Akute Infektion der Nasen-Rachen-Schleimhäute (z.B. grippaler Infekt)
+180;Influenza ohne Pneumonie
+181;Pneumonie und andere infektiöse Lungenerkrankungen
+182;Akute Bronchitis und Bronchiolitis
+183;Chronische Sinusitis
+184;Nasenpolypen / Allergische Rhinitis (z.B. Heuschnupfen)
+185;Erkrankungen des Kehlkopfs und der Stimmbänder
+186;Andere Erkrankungen der oberen Atemwege
+187;Einfache bzw. nicht näher bezeichnete chronische Bronchitis
+188;Mukoviszidose
+189;Emphysem / Chronische obstruktive Bronchitis
+190;Asthma bronchiale
+191;Sarkoidose
+192;Lungenkrankheiten durch exogene Substanzen
+193;Fremdkörper in der Luftröhre / im Bronchus / in der Lunge
+194;Akutes Lungenödem und respiratorische Insuffizienz
+195;Löffler-Syndrom
+196;Postinflammatorische und interstitielle Lungenfibrose
+197;Sonstige Krankheiten der Pleura
+198;Andere und nicht näher bezeichnete Erkrankungen der Lunge oder des respiratorischen Systems
+199;Erkrankungen der Zähne, des Zahnfleischs und des Kiefers (z.B. Gingivitis, Parodontitis apicalis)
+200;Erkrankungen der Speicheldrüsen
+201;Andere Erkrankungen der Mundhöhle / der Zunge / des Kiefers
+202;Angeborene Anomalien des Ohrs, des Gesichts, des Halses, der Nase, des Munds und des Rachens
+203;Erkrankungen des Ösophagus
+204;Ösophagusatresie / -stenose, andere angeborene gastrointestinale Anomalien (Alter > 5 Jahre)
+205;Peptisches Ulkus, gastrointestinale Blutung und/oder Perforation
+206;Störungen / Symptome an Magen / Darm (exkl. Obstruktion, Ulkus und Blutung)
+207;Obstruktion des Pylorus / des Duodenums
+208;Appendizitis, auch mit Perforation und Peritonitis
+209;Eingeweidebruch mit Komplikationen
+210;Eingeweidebruch ohne Komplikationen
+211;Chronisch entzündliche Darmerkrankung (Morbus Crohn / Colitis ulcerosa)
+212;Mesenterialarterieninfarkt, intestinale Durchblutungsinsuffizienz
+213;Ileus
+214;Darmdivertikel
+215;Erkrankungen des Anus / Rektums
+216;Hämorrhoiden
+217;Darmabszess, Fistel und andere näher bezeichnete Erkrankungen
+218;Peritonitis
+219;Erkrankungen des Bauchfells, exkl. Peritonitis
+220;Leberzirrhose (inkl. Komplikationen)
+221;Akute schwere Lebererkrankung
+222;Chronische Hepatitis
+223;Toxische, nicht virale Hepatitis und andere Lebererkrankungen
+224;Gallensteine mit Cholezystitis und andere Erkrankungen der Gallenblase
+225;Erkrankungen der Gallenblase und -wege
+226;Näher bezeichnete Erkrankung der Gallenwege (Cholangitis, Verschluß, Perforation)
+227;Erkrankungen des Pankreas
+228;Intestinale Malabsorption
+229;Andere und nicht näher bezeichnete Störungen des Verdauungssystems
+230;Fremdkörper im Gastrointestinaltrakt
+231;Schwerwiegende bakterielle Hautinfektionen
+232;Pemphiguskrankheiten und Pemphigoidkrankheiten
+233;Blasenbildende Dermatose exkl. Pemphiguskrankheiten und Pemphigoidkrankheiten
+234;Dermatitis durch aufgenommene Nahrungsmittel, Hauteruptionen durch Drogen oder Arzneimittel
+235;Psoriasis und Parapsoriasis (inkl. Gelenkbeteiligung)
+236;Erythema exsudativum multiforme, einschließlich toxische epidermale Nekrolyse (Lyell-Syndrom)
+237;Urtikaria und Erythem
+238;Strahleneinwirkungen / Verbrennungen, exkl. Verbrennungen dritten Grades oder Verbrennungen von 10% und mehr der Körperoberfläche
+239;Ausgedehnte Verbrennungen
+240;Erkrankungen der Finger- und Zehennägel
+241;Angeborene Anomalien der Haut
+242;Seborrhoische Keratose
+243;Dekubitalgeschwüre
+244;(Diskoider) Lupus erythematosus
+245;Hautulkus (ohne Dekubitalgeschwür)
+246;Andere Erkrankungen der Haut
+247;Reaktive Arthritiden
+248;Rheumatoide Arthritis und entzündliche Bindegewebskrankheiten
+249;Gicht / Arthritis urica
+250;Osteoarthrose der großen Gelenke
+251;Osteoarthrose sonstiger oder nicht weiter spezifizierter Gelenke
+252;Senkfuß / Plattfuß, erworbene Zehendeformitäten
+253;Erworbene Gliedmaßendeformitäten, exkl. Zehendeformitäten, exkl. Senkfuß / Plattfuß
+254;Binnenschädigung des Knies, Luxation, Verstauchung und Zerrung des Kniegelenkes und von Bändern des Kniegelenkes
+255;Gelenkerkrankungen, Verrenkungen, Gelenkschmerzen / -steifigkeit, exkl. Gicht
+256;Skoliose, Deformität der Wirbelsäule
+257;Osteochondrosis deformans juvenilis (Morbus Scheuermann) / juvenile lumbar osteochondrosis, Epiphyseolysis capitis femoris
+258;Wirbelgleiten / Spondylolisthesis / Spondylolyse, angeboren oder erworben
+259;Wirbelkörperluxation (Subluxation)
+260;Bandscheibenerkrankungen (Bandscheibenvorfall, -verschleiß)
+261;Spondylose und assoziierte Erkrankungen (Osteoarthrose der Wirbelsäule)
+262;Spinalkanalstenose
+263;Nicht näher bezeichneter Rückenschmerz und andere Schmerzzustände / Erkrankungen des Rückens / Nackens
+264;Erkrankungen der Muskeln
+265;Erkrankungen der Synovialis und der Sehnen
+266;Sonstige Erkrankungen der Weichteilgewebe
+267;Osteoporose und Folgeerkrankungen
+268;Osteomalazie / Rachitis
+269;Entzündung / Nekrose von Knochen
+270;Andere Erkrankungen des Knochens und Knorpels (z.B. Osteodystrophia deformans / Paget's disease of bone)
+271;Nephritis
+272;Refluxuropathie und Niereninfektion
+273;Niereninfektion
+274;Niereninsuffizienz
+275;Nephrolithiasis / Uretherstein / Blasenstein (z.B. Nierenstein)
+276;Nierenzysten
+277;Zystitis, andere Infektionen der Harnwege
+278;Neurogene Blase
+279;Harnröhrenstriktur
+280;Angeborene Anomalien der Nieren / der Harnwege, exkl. Verlegungen / Zysten
+281;Fremdkörper im Geschlechtstrakt / Harntrakt
+282;Urininkontinenz
+283;Andere Erkrankungen der Harnwege
+284;Benigne Prostatahyperplasie
+285;Prostataerkrankungen, exkl. benigne Prostatahyperplasie
+286;Erkrankungen der männlichen Genitalorgane inkl. Impotenz organischen Ursprungs
+287;Männliche Unfruchtbarkeit
+288;Angeborene Anomalien der männlichen Genitalorgane
+289;Entzündliche Beckenerkrankung (PID)
+290;Entzündliche Erkrankungen der Vagina und der Zervix
+291;Endometriose
+292;Genitalprolaps bei der Frau
+293;Erkrankungen der weiblichen Beckenorgane
+294;Ovarialzysten
+295;Nicht-entzündliche Erkrankungen der weiblichen Genitalorgane
+296;Andere Erkrankungen der weiblichen Genitalorgane
+297;Angeborene Anomalien der weiblichen oder nicht näher bezeichneten Genitalorgane
+298;Klimakterische Störungen
+299;Weibliche Unfruchtbarkeit
+300;Fehlgeburt / Schwangerschaftsabbruch / Extrauteringravidität
+301;Bestehende Schwangerschaft (einschl. Komplikationen)
+302;Entbindung / abgeschlossene Schwangerschaft (einschl. Komplikationen)
+303;Lebendgeborene (ohne weitere Angaben)
+304;Schädigung des Neugeborenen durch Alkohol / Drogen, einschließlich Alkohol-Embryopathie (mit Dysmorphien)
+305;Risikogeburt
+306;Infektionen des Neugeborenen
+307;Blutungen beim Neugeborenen
+308;Hämolyse während der Perinatalperiode
+309;Neugeborenenikterus
+310;Transitorische endokrine Störungen des Neugeborenen
+311;Sonstige Erkrankungen des Verdauungssystems in der Perinatalperiode
+312;Probleme der Haut / Temperatur beim Neugeborenen
+313;Andere Probleme in der Perinatalperiode
+314;Angeborene schwere Herzfehler (<18 Jahre)
+315;Angeborene schwere Herzfehler (>17 Jahre)
+316;Sonstige angeborene Anomalien des Herzens und des Gefäßsystems
+317;Angeborene Anomalie der Lunge / des respiratorischen Systems
+318;Angeborene Fehlbildungen des respiratorischen Systems und des Magen-Darm-Traktes bei Kindern (bis max. 5 Jahre)
+319;Lippenspalte / Gaumenspalte
+320;Andere angeborene muskuloskeletale Anomalien
+321;Angeborene Anomalien der Wirbelsäule, exkl. Spondylolisthesis / Spondylolyse
+322;Angeborene, schwere Entwicklungsstörungen des Skeletts und des Bindegewebes
+323;Nicht näher bezeichnete Fehlbildungssyndrome
+324;Nicht näher bezeichnete Chromosomenanomalien
+325;Gonosomale Chromosomenanomalien (z.B. Klinefelter-Syndrom / Turner-Syndrom)
+327;Schweres Schädel-Hirn-Trauma
+328;Mittelschweres Schädel-Hirn-Trauma
+329;Leichtes Schädel-Hirn-Trauma
+330;Wirbelfraktur
+331;Offene Rippenfraktur, Fraktur des Sternums, Fraktur der Kehlkopfknochen, Verletzung der Trachea, Wirbelfraktur
+332;Geschlossene Rippenfraktur
+333;Innere Verletzungen
+334;Beckenfraktur
+335;Frakturen des Schlüsselbeins, des Schulterblatts und des Humerus
+336;Schulterluxation
+337;Traumatische Amputation einer Extremität
+338;Fraktur der Hand / des Handgelenks / des Unterarms
+339;Distorsion / Verrenkung
+340;Offene Wunde / Verletzung des Unterarms
+341;Traumatische Gelenkluxation, exkl. der Hüfte, des Knies, der Schulter und der Wirbel
+342;Femurfraktur
+343;Luxation des Hüftgelenks
+344;Frakturen der Patella, Tibia, Fibula, multiple Frakturen der oberen / unteren Extremität
+345;Frakturen des Sprunggelenks
+346;Offene Wunde, exkl. am Auge und Unterarm
+347;Fraktur des Fußes
+349;Fraktur nicht näher bezeichneter Knochen
+351;Erfrierungen
+352;Vergiftungen durch andere oder nicht näher bezeichnete nicht medizinisch verwendete Substanzen
+353;Missbrauch von Personen
+354;Schock
+355;Nicht näher bezeichnete allergische Reaktion
+356;Frühe Komplikationen durch Trauma
+357;Näher bezeichnete Komplikationen bei Patienten während oder nach chirurgischer oder medizinischer Behandlung
+358;Spätfolgen von Verletzungen, exkl. Spätfolgen am Rückenmark, von Schädel / Gesichtsschädelfrakturen und Spätfolgen intrakranieller Verletzungen
+359;Sonstige und nicht näher bezeichnete Schäden durch äußere Ursachen
+360;Andere Unfallfolgen
+361;Status nach Organtransplantation (inkl. Komplikationen)
+362;Schrumpf- und sonstige kleine Niere unbekannter Ursache
+363;Pathologische Frakturen, exkl. Osteoporose
+364;Kontusion / (oberflächliche) Verletzung des Kopfes und Halses
+365;Kontusion / (oberflächliche) Verletzung des Rumpfes
+366;Kontusion / (oberflächliche) Verletzung der Extremitäten, inkl. nicht näher bez. Lokalisationen

@@ -11,21 +11,30 @@ public final class Consts {
 	public static final String modelcsv= "all_models.csv";
 	public static final String knrcsv= "knrlist.csv";
 	public static final String atccsv= "atc.csv";
+	public static final String featurecsv= "allfeatures.csv";
 	
 	
-	public static final String targetCol = "target";
-	public static final String targetPraevCol = "mean";
-	public static final String targetAucTrainCol = "auc_train";
-	public static final String targetAucTestCol = "auc_test";
-	public static final String targetIDCol = "model_id";
+	public static final String targetCol = "TARGET";
+	public static final String targetPraevCol = "MEAN";
+	public static final String targetAucTrainCol = "AUC_TRAIN";
+	public static final String targetAucTestCol = "AUC_TEST";
+	public static final String targetIDCol = "MODEL_ID";
 	
-	public static final String knrKeyCol="knr";
-	public static final String knrValueCol="bezeichnung";
+	public static final String knrKeyCol="KNR";
+	public static final String knrValueCol="BEZEICHNUNG";
 	
-	public static final String atcKeyCol="atc";
-	public static final String atcValueCol="bezeichnung";
+	public static final String atcKeyCol="ATC";
+	public static final String atcValueCol="BEZEICHNUNG";
 	
-	public static final String khattribute="kh";
+	public static final String alterattribute="ALTER";
+	public static final String geschlechtattribute="GESCHLECHT";
+	public static final String knrattributePrefix="KNR";
+	public static final String khattributePrefix="KH_KNR";
+	public static final String atcattributePrefix="ATC_";
+	
+	public static final String knrTargetPrefix="T_KNR";
+	public static final String khTargetPrefix="T_KH_KNR";
+	public static final String todTargetPrefix="T_TOD";
 	
 	 /**
  	 * Instantiates a new consts.
